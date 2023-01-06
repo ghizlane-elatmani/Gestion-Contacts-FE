@@ -1,4 +1,20 @@
-<div>
-  <p>Nom: {{ contact.name }}</p>
-  <p>Email: {{ contact.email }}</p>
+<div class="container spacer">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of pageContacts?.content">
+        <td>{{ c.id }}</td>
+        <td>{{ c.firstName }}</td>
+        <td>{{ c.lastName }}</td>
+        <td>{{ c.email }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

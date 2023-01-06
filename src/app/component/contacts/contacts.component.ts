@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css'],
 })
-export class ContactsComponent {
-  contact: any = { name: 'Mohamed', email: 'mohamed@gmail.com' };
+export class ContactsComponent implements OnInit {
+  pageContacts: any;
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit() {
+    this.contactService.getData().subscribe((res) => {
+      this.pageContacts = res;
+    });
+  }
 }
