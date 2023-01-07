@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class ContactService {
   constructor(private http: HttpClient) {}
 
-  getData() {
+  getContacts(kw: string, page: number, size: number) {
     return this.http.get(
-      'http://localhost:8080/searchContacts?kw=A&size=5&page=0'
+      `http://localhost:8080/searchContacts?kw=${kw}&size=${size}&page=${page}`
     );
   }
 }
