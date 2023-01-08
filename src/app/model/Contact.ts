@@ -1,9 +1,8 @@
 export class Contact {
-  id: number;
-  firstName: string;
-  lastName: string;
-  birthDate: string;
-  email: string;
-  tel: number;
-  photo: string;
+  firstName: string = '';
+  lastName: string = '';
+  birthDate: Date;
+  email: string = '';
+  tel: number = 0;
+  photo: string = '';
 }

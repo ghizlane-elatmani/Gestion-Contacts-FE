@@ -1,1 +1,69 @@
-<div class="container spacer"></div>
+<div class="container spacer">
+  <form class="form">
+    <!-- FIRST NAME -->
+    <div class="mb-3">
+      <label for="inputFirstName" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputFirstName"
+        [(ngModel)]="contact.firstName"
+        name="firstname"
+      />
+    </div>
+
+    <!-- LAST NAME -->
+    <div class="mb-3">
+      <label for="inputLastName" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        [(ngModel)]="contact.lastName"
+        name="lastname"
+      />
+    </div>
+
+    <!-- EMAIL -->
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail"
+        [(ngModel)]="contact.email"
+        name="email"
+      />
+    </div>
+
+    <!-- DATE -->
+    <div class="mb-3">
+      <label for="inputDate" class="form-label">Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="inputDate"
+        [(ngModel)]="contact.birthDate"
+        name="birthDate"
+      />
+    </div>
+
+    <!-- PHONE NUMBER -->
+    <div class="mb-3">
+      <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputPhoneNumber"
+        [(ngModel)]="contact.tel"
+        name="tel"
+      />
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" (click)="saveContact()">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
