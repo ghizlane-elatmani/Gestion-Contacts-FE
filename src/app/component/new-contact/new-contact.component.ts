@@ -9,14 +9,16 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class NewContactComponent implements OnInit {
   contact: Contact = new Contact();
+  mode: number = 1;
 
   constructor(private contactService: ContactService) {}
 
   ngOnInit() {}
 
   saveContact() {
-    this.contactService.createContact(this.contact).subscribe((data) => {
-      console.log(data);
+    this.contactService.createContact(this.contact).subscribe((data: any) => {
+      this.contact = data;
+      this.mode = 2;
     });
   }
 }

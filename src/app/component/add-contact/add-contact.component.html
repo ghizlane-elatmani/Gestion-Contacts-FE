@@ -1,0 +1,86 @@
+<div class="container spacer">
+  <table class="table table-bordered">
+    <thead class="table-primary">
+      <tr>
+        <th class="text-center">Entry Of A New Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <form
+            class="form mt-4 mb-4"
+            #f="ngForm"
+            (ngSubmit)="onSaveContact(f.value)"
+          >
+            <!-- FIRST NAME -->
+            <div class="form-group">
+              <label for="" class="control-label">First Name</label>
+              <input
+                #firstName="ngModel"
+                type="text"
+                class="form-control mb-3"
+                name="firstName"
+                required
+                ngModel
+              />
+            </div>
+
+            <!-- LAST NAME -->
+            <div class="form-group">
+              <label for="" class="control-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control mb-3"
+                name="lastName"
+                required
+                ngModel
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="" class="control-label">Email</label>
+              <input
+                type="email"
+                class="form-control mb-3"
+                name="email"
+                required
+                ngModel
+                email
+              />
+            </div>
+
+            <!-- BIRTH DATE -->
+            <div class="form-group">
+              <label for="" class="control-label">Birth date</label>
+              <input
+                type="date"
+                class="form-control mb-3"
+                name="birthDate"
+                required
+                ngModel
+              />
+            </div>
+
+            <!-- TELEPHONE -->
+            <div class="form-group">
+              <label for="" class="control-label">Telephone</label>
+              <input
+                type="text"
+                class="form-control mb-4"
+                name="telephone"
+                required
+                ngModel
+              />
+            </div>
+
+            <button [disabled]="!f.valid" type="submit" class="btn btn-primary">
+              Save
+            </button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

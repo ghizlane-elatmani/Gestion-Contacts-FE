@@ -1,5 +1,5 @@
 <div class="container spacer">
-  <form class="form">
+  <form class="form" *ngIf="mode == 1">
     <!-- FIRST NAME -->
     <div class="mb-3">
       <label for="inputFirstName" class="form-label">First Name</label>
@@ -66,4 +66,29 @@
       </button>
     </div>
   </form>
+
+  <div class="container" *ngIf="mode == 2">
+    <table class="table table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th>New Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p><strong>ID:</strong> {{ contact.id }}</p>
+            <p><strong>First Name:</strong> {{ contact.lastName }}</p>
+            <p><strong>Last Name:</strong> {{ contact.firstName }}</p>
+            <p><strong>Birth Date:</strong> {{ contact.birthDate }}</p>
+            <p><strong>Email:</strong> {{ contact.email }}</p>
+            <p class="mb-5"><strong>Phone number:</strong> {{ contact.tel }}</p>
+            <button class="btn btn-primary" (click)="mode = 1">
+              New contact
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
