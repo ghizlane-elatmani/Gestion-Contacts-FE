@@ -14,7 +14,18 @@ export class ContactService {
     );
   }
 
+  getContact(id: number) {
+    return this.http.get(`http://localhost:8080/contacts/${id}`);
+  }
+
   createContact(contact: Contact) {
     return this.http.post('http://localhost:8080/contacts', contact);
+  }
+
+  updateContact(contact: Contact) {
+    return this.http.put(
+      `http://localhost:8080/contacts/${contact.id}`,
+      contact
+    );
   }
 }

@@ -23,6 +23,7 @@
         <th scope="col">First name</th>
         <th scope="col">Last name</th>
         <th scope="col">Email</th>
+        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@
         <td>{{ c.firstName }}</td>
         <td>{{ c.lastName }}</td>
         <td>{{ c.email }}</td>
+        <td><a (click)="onEditContact(c.id)" class="clickable">Edit</a></td>
       </tr>
     </tbody>
   </table>

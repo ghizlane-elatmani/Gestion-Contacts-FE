@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, TitleStrategy } from '@angular/router';
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ContactsComponent implements OnInit {
   size: number = 5;
   pages: Array<number> | undefined;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -29,5 +30,9 @@ export class ContactsComponent implements OnInit {
   goToPage(i: number) {
     this.currentPage = i;
     this.search();
+  }
+
+  onEditContact(id: number) {
+    this.router.navigate(['edit-contact', id]);
   }
 }
