@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, TitleStrategy } from '@angular/router';
+import { Contact } from 'src/app/model/Contact';
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -34,5 +35,19 @@ export class ContactsComponent implements OnInit {
 
   onEditContact(id: number) {
     this.router.navigate(['edit-contact', id]);
+  }
+
+  onDeleteContact(c: Contact) {
+    let confirm = window.confirm(
+      'Are you sure you want to delete this contact ?'
+    );
+    if (confirm) {
+      this.contactService.deleteContact(c.id).subscribe((data) => {
+        this.pageContacts.content.splice(
+          this.pageContacts.content.indexOf(c),
+          1
+        );
+      });
+    }
   }
 }
